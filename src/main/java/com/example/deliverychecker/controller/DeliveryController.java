@@ -21,6 +21,8 @@ public class DeliveryController {
     public ResponseEntity<DeliveryResponse> checkDeliverable(@Valid @RequestBody AddressRequest request) {
         boolean ok = deliveryService.isDeliverable(request.getPostalCode());
         System.out.println("Received request: " + request.getPostalCode());
+        System.out.println("Received request: " + request.getPostalCode());
+
         if (ok) {
             return ResponseEntity.ok(new DeliveryResponse(true,
                     "Product is deliverable at postal code " + request.getPostalCode()));
