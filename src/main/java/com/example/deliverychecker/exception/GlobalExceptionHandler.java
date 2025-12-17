@@ -29,4 +29,24 @@ public class GlobalExceptionHandler {
                 req.getDescription(false));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
     }
+    @ExceptionHandler(InvalidPostalCodeException.class)
+    public ResponseEntity<ApiError> handleInvalidPostal(InvalidPostalCodeException ex, WebRequest req) {
+        ApiError err = new ApiError(HttpStatus.BAD_REQUEST.value(),
+                "Invalid Postal Code",
+                ex.getMessage(),
+                req.getDescription(false));
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
+    }
+
+    @ExceptionHandler(ServiceNotAvailableException.class)
+    public ResponseEntity<ApiError> handleServiceUnavailable(ServiceNotAvailableException ex, WebRequest req) {
+        ApiError err = new ApiError(HttpStatus.NOT_FOUND.value(),
+                "Service Unavailable",
+                ex.getMessage(),
+                req.getDescription(false));
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
+    }
+
 }

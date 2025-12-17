@@ -48,3 +48,5 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -i id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} \
           "cd ~/delivery-app && ./deploy.sh"
+          
+          

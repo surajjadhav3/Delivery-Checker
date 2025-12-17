@@ -9,5 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DeliveryCheckerApplication {
     public static void main(String[] args) {
         SpringApplication.run(DeliveryCheckerApplication.class, args);
+
     }
 }

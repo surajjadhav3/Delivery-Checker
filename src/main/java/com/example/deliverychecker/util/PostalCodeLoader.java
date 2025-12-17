@@ -34,7 +34,9 @@ public class PostalCodeLoader {
     }
 
     public boolean isServiceable(String postalCode) {
+
         return allowed.contains(postalCode);
+
     }
 
     // for tests / admin endpoints you can expose allowed set if needed

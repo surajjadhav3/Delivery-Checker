@@ -12,7 +12,7 @@ FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
 
-# Copy ANY jar from target folder
+# Copy jar from build stage
 COPY --from=build /workspace/target/*.jar app.jar
 
 EXPOSE 8080
